@@ -6,14 +6,14 @@ Here is his blog, you should check it to get familiar with grunt workflows and m
 
 My app is an expanded version of the above mentioned app, and its an attempt to cover the following areas:
 
-#use of more than one database servers on the same app,decided by user choise on client.
+1.use of more than one database servers on the same app,decided by user choise on client.
 
-#use of MS SQL Server as an RDBMS, which is a non-trivial subject with node.js
+2.use of MS SQL Server as an RDBMS, which is a non-trivial subject with node.js
 
-#use of promises serverside.
+3.use of promises serverside.
 
-#use of Angular cookies (via cookieStore module) for session management( its not implemented to have timeouts yet).
+4.use of Angular cookies (via cookieStore module) for session management( its not implemented to have timeouts yet).
 
-#use of smart-table to picture fetched data on client.
+5.use of smart-table to picture fetched data on client.
 
 It can be used as boilerplate and the reason I uploaded it is to demonstrate some definately basic and non-perfect, but still functional ways to perform tasks concerning the bulletpoints above. Despite my workload, I hope I will be able to commit new features in the near future and improve the already functional ones.
