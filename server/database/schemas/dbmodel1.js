@@ -1,0 +1,1 @@
+//Here you can create a model/class corresponding to a DB table, to enable easier and better data management.

@@ -1,0 +1,1 @@
+//Here you can implement a MySQL interface similar to msSQL I have implemented. This sample app demonstrates  msSQL server use with node.js mainly.

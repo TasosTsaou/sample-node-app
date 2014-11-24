@@ -1,0 +1,28 @@
+{
+
+    "DBserver1": {
+        "server": "HostingPCname",
+        "user": "DBusername",
+        "password": "DBpassword",
+        "port": "portThatYourDBInstanceListensTo"
+    },
+    "DBserver2": {
+        "server": "HostingPCname",
+        "user": "DBusername",
+        "password": "DBpassword",
+        "port": "portThatYourDBInstanceListensTo"
+    },
+    "DBserver3": {
+        "server": "HostingPCname",
+        "user": "DBusername",
+        "password": "DBpassword",
+        "port": "portThatYourDBInstanceListensTo"
+    },
+    "DBserver4": {
+        "server": "HostingPCname",
+        "user": "DBusername",
+        "password": "DBpassword",
+        "port": "portThatYourDBInstanceListensTo"
+    }
+
+}
