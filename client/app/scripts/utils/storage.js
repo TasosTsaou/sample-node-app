@@ -1,0 +1,1 @@
+//here you can write code handling browser cache operations, your app storage operations handled by angular factories etc.

@@ -1,0 +1,68 @@
+<!--Start Breadcrumb-->
+<div class="row">
+    <div id="breadcrumb" class="col-xs-12">
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a>
+            </li>
+            <li><a href="#/login">Login</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<!--End Breadcrumb-->
+<div class="clearfix visible-xs"></div>
+<div class="login-container">
+    <div class="col-md-12">
+        <h3 class="login-header">Please login to continue</h3>
+        <hr>
+        <br>
+    </div>
+
+    <div class="login-form">
+
+        <form class="form-horizontal">
+
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="username">Username:</label>
+                <div class="col-md-5">
+                    <input id="firstname" name="firstname" ng-model="login.user.username" type="text" placeholder="Enter username" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="password1">Password:</label>
+                <div class="col-md-5">
+                    <input id="password" name="password" ng-model="login.user.password" type="password" placeholder="Enter password" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="branch">Choose Branch/Department:</label>
+                <div class="col-md-5">
+                    <!--<input id="password2" name="password2" ng-model="login.user.branch" type="password" placeholder="" class="form-control input-md">-->
+                    <select id="branch" name="branch" ng-model="login.user.branch" class="form-control input-md">
+                        <option value="DBserver1">Department 1</option>
+                        <option value="DBserver2">Branch 2</option>
+                        <option value="DBserver3">Whatever 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="login"></label>
+                <div class="col-md-5">
+                    <button ng-click="login.submit()" id="login" name="login" class="btn btn-success btn-block">Login</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>

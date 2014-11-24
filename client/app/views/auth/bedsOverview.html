@@ -1,0 +1,66 @@
+<!--Start Breadcrumb-->
+<div class="row">
+    <div id="breadcrumb" class="col-xs-12">
+        <ol class="breadcrumb">
+            <li class="branch">{{ branch }}
+            </li>
+            <li><a href="#/home">Home</a>
+            </li>
+            <li><a href="#/bedsOverview">Beds Overview</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<!--End Breadcrumb-->
+<div class="clearfix visible-xs"></div>
+<div class="container-fluid">
+    <div ng-controller="BedsCtrl">
+        <div class="col-xs-12">
+            <label class="col-xs-12 control-label" for="bedsByMedSeat">Choose to see bed overview based on bed class or clinics:</label>
+            <div class="col-xs-4">
+                <button ng-click="checkdate=true;userclick=false;" id="getDate" name="getDate" class="btn btn-success btn-block">Select Date</button>
+            </div>
+            <div class="col-xs-4">
+                <button ng-click="userclick=true;checkdate=false;bedsMedSeat()" id="bedsByMedSeat" name="bedsByMedSeat" class="btn btn-success btn-block">Beds by Bed Class</button>
+            </div>
+            <div class="col-xs-4">
+                <button ng-click="userclick=true;checkdate=false;bedsClinic()" id="clinic" name="clinic" class="btn btn-success btn-block">Beds by Clinic</button>
+            </div>
+        </div>
+        <br>
+        <div class="col-xs-12">
+            <p>Selected date: <em>{{dt | date:'yyyy-MM-dd'}}</em>
+            </p>
+        </div>
+        <br>
+        <div ng-show="checkdate">
+            <!--<h4>Select date:</h4>-->
+            <div style="display:inline-block; min-height:290px;">
+                <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+            </div>
+        </div>
+        <div ng-show="userclick" class="col-xs-12">
+            <table st-table="displayData" st-safe-src="myData" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Total Seats</th>
+                        <th>Occupied</th>
+                        <th>Available</th>
+                        <th>Percentage(%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in displayData track by $index">
+
+                        <td>{{row.Name}}</td>
+                        <td>{{row.Total}}</td>
+                        <td>{{row.Count}}</td>
+                        <td>{{row.Remain}}</td>
+                        <td>{{row.Pct | number:1}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

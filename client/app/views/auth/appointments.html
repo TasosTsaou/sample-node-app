@@ -1,0 +1,74 @@
+<!--Start Breadcrumb-->
+<div class="row">
+    <div id="breadcrumb" class="col-xs-12">
+        <ol class="breadcrumb">
+            <li class="branch">{{ branch }}
+            </li>
+            <li><a href="#/home">Home</a>
+            </li>
+            <li><a href="#/appointments">Appointments</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<!--End Breadcrumb-->
+<div class="clearfix visible-xs"></div>
+<div class="container-fluid">
+    <div ng-controller="AppointmentsCtrl">
+        <div class="col-xs-12">
+            <label class="col-xs-12 control-label" for="appointments">Choose date and a department:</label>
+            <div class="col-xs-4">
+                <div class="form-group">
+                    <select id="id" name="id" ng-model="department.id" class="form-control input-md">
+                        <option value="10">ΥΠΕΡΗΧΑ - TRIPLEX - ΒΙΟΨΙΑ - ΠΑΡΑΚΕΝΤΗΣΗ</option>
+                        <option value="13">ΑΞΟΝΙΚΟΣ - ΜΑΓΝΗΤΙΚΟΣ ΤΟΜΟΓΡΑΦΟΣ-ΜΑΣΤ-ΜΟΠ</option>
+                        <option value="15">ΤΕΣΤ ΚΟΠΩΣΕΩΣ</option>
+                        <option value="21">ΑΞΟΝΙΚΟΣ ΤΟΜΟΓΡΑΦΟΣ</option>
+                        <option value="22">ΜΑΓΝΗΤΙΚΟΣ ΤΟΜΟΓΡΑΦΟΣ</option>
+                        <option value="23">ΜΑΣΤΟΓΡΑΦΟΣ - ΜΟΠ</option>
+                        <option value="24">ΣΑΝΙΔΑΣ Η. ΕΠΙΚ. ΚΑΘΗΓΗΤΗΣ ΧΕΙΡΟΥΡΓΙΚΗΣ ΧΕΙΡΟΥΡΓΟΣ ΟΓΚΟΛΟΓΟΣ</option>
+                        <option value="25">ΑΓΓΕΙΟΧΕΙΡΟΥΡΓΙΚΟ (Κος Μουστάρδας)</option>
+                        <option value="26">ΠΑΘΟΛΟΓΙΚΟ</option>
+                        <option value="27">ΧΕΙΡΟΥΡΓΕΙΟ</option>
+                        <option value="28">ΥΠΕΡΗΧΑ ΙΣΟΓΕΙΟΥ</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <button ng-click="checkdate=true;userclick=false;" id="getDate" name="getDate" class="btn btn-success btn-block">Select Date</button>
+            </div>
+            <div class="col-xs-4">
+                <button ng-click="userclick;getAppointments()" id="getappoints" name="getappoints" class="btn btn-success btn-block">Find Appointments</button>
+            </div>
+
+        </div>
+        <br>
+        <div class="col-xs-10">
+            <p>Selected date: <em>{{dt | date:'yyyy-MM-dd'}}</em>
+            </p>
+        </div>
+        <br>
+        <div ng-show="checkdate">
+            <!--<h4>Select date:</h4>-->
+            <div style="display:inline-block; min-height:290px;">
+                <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+            </div>
+        </div>
+        <div class="col-xs-12" ng-show="userclick">
+            <table st-table="displayAppData" st-safe-src="appData" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in displayAppData track by $index">
+                        <td>{{row.TIME | date:'H:mm'}}</td>
+                        <td>{{row.LINE}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
